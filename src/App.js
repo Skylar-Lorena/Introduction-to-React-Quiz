@@ -19,6 +19,7 @@ function App() {
     
     <>
     <img src={logo} className="App-logo" alt="logo" />
+    <h1>JSX is cool!</h1>;
       <h3>User names</h3>
       <ul>{userItems}</ul>    </>
   );
