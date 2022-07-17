@@ -2,6 +2,52 @@ import React from "react";
 import logo from './logo.svg';
 import './App.css';
 
+// update parent state ...uncomment
+function Child({ setValue }) {
+  return (
+    <>
+      <div>Child</div>
+      <button onClick={() => setValue("Parent has been updated!")}>
+        Change Parent Value
+      </button>
+    </>
+  );
+}
+
+function Parent() {
+  const [value, setValue] = React.useState(
+    "I need to be updated from my child"
+  );
+
+  return (
+    <>
+      <h3>Update Parent State Challenge (Using Callback)</h3>
+      <div className="wrapper">
+        <div>Parent</div>
+        <div className="box-wrapper">{value}</div>
+      </div>
+
+      <div className="wrapper">
+        <Child setValue={setValue} />
+      </div>
+    </>
+  );
+}
+// update parent state ..
+
+// react children ...uncomment
+// function Child() {
+  // return <div>This is children content</div>;
+// }
+// 
+// function Parent({ children }) {
+  // return (
+    // <div>
+      {/* <h3>Parent Component</h3> */}
+      {/* {children} */}
+    {/* </div> */}
+  // );
+// }
 
 /**
   Challenge: Display all users to the browser
@@ -32,6 +78,9 @@ function App() {
       </button>
 
       {show && <div>Toggle Challenge</div>}
+      <Parent>
+      <Child />
+    </Parent>
         </>
   );
 }
