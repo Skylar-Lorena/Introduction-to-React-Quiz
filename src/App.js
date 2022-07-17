@@ -12,14 +12,15 @@ const users = [
   { name: "Billy Doe", id: 3 }
 ];
 
+const userItems = users.map((user) => <li key={user.id}>{user.name}</li>);
+
 function App() {
   return (
     
     <>
     <img src={logo} className="App-logo" alt="logo" />
       <h3>User names</h3>
-      <ul></ul>
-    </>
+      <ul>{userItems}</ul>    </>
   );
 }
 
